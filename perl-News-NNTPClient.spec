@@ -3,7 +3,7 @@ Summary:	News-NNTPClient perl module
 Summary(pl):	Modu³ perla News-NNTPClient
 Name:		perl-News-NNTPClient
 Version:	0.37
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
@@ -13,6 +13,7 @@ Patch0:		%{name}-paths.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	perl >= 5.6
 Obsoletes:	perl-NNTPClient
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
