@@ -3,7 +3,7 @@ Summary:	News-NNTPClient perl module
 Summary(pl):	Modu³ perla News-NNTPClient
 Name:		perl-News-NNTPClient
 Version:	0.37
-Release:	3
+Release:	4
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/News/NNTPClient-%{version}.tar.gz
