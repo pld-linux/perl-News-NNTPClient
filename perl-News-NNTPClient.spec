@@ -15,7 +15,7 @@ Source0:	http://www.cpan.org/modules/by-module/News/NNTPClient-%{version}.tar.gz
 # Source0-md5:	1b0257d13f38d2b71bb85d5ac76f5fd1
 Patch0:		%{name}-paths.patch
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	perl-devel >= 5.6
+BuildRequires:	perl-devel >= 1:5.8.0
 Obsoletes:	perl-NNTPClient
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
