@@ -1,10 +1,15 @@
+#
+# Conditional build:
+%bcond_with	tests	# perform "make test" (uses network!)
+#
 %include	/usr/lib/rpm/macros.perl
 Summary:	News::NNTPClient perl module
 Summary(pl):	Modu³ perla News::NNTPClient
 Name:		perl-News-NNTPClient
 Version:	0.37
 Release:	6
-License:	GPL
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/News/NNTPClient-%{version}.tar.gz
 # Source0-md5:	1b0257d13f38d2b71bb85d5ac76f5fd1
@@ -30,12 +35,14 @@ News::NNTPClient - interfejs klienta NNTP.
 	INSTALLDIRS=vendor
 %{__make}
 
+%{?with_tests:%{__make} test}
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
-
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 install demos/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
