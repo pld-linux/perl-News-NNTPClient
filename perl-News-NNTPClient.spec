@@ -14,7 +14,7 @@ BuildRequires:	perl >= 5.005_03-14
 %requires_eq	perl
 Requires:	%{perl_sitearch}
 Obsoletes:	perl-NNTPClient
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 News-NNTPClient - a client interface to NNTP. 
