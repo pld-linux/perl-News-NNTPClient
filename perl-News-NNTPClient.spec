@@ -3,12 +3,12 @@ Summary:	News::NNTPClient perl module
 Summary(pl):	Modu³ perla News::NNTPClient
 Name:		perl-News-NNTPClient
 Version:	0.37
-Release:	4
+Release:	5
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/News/NNTPClient-%{version}.tar.gz
 Patch0:		%{name}-paths.patch
-BuildRequires:	rpm-perlprov >= 3.0.3-18
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl >= 5.6
 Obsoletes:	perl-NNTPClient
 BuildArch:	noarch
@@ -25,7 +25,8 @@ News::NNTPClient - interfejs klienta NNTP.
 %patch -p0
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make}
 
 %install
@@ -42,6 +43,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%{perl_sitelib}/News/NNTPClient.pm
+%{perl_vendorlib}/News/NNTPClient.pm
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
