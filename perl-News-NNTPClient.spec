@@ -7,8 +7,8 @@ Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/News/NNTPClient-%{version}.tar.gz
-Patch:		perl-News-NNTPClient-paths.patch
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/News/NNTPClient-%{version}.tar.gz
+Patch0:		perl-News-NNTPClient-paths.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	perl >= 5.005_03-14
 %requires_eq	perl
@@ -17,7 +17,7 @@ Obsoletes:	perl-NNTPClient
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-News-NNTPClient - a client interface to NNTP. 
+News-NNTPClient - a client interface to NNTP.
 
 %description -l pl
 News-NNTPClient - interfejs klienta NNTP.
@@ -32,10 +32,10 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/src/examples/%{name}
+install -d $RPM_BUILD_ROOT%{_prefix}/src/examples/%{name}
 
 make install DESTDIR=$RPM_BUILD_ROOT
-install demos/* $RPM_BUILD_ROOT/usr/src/examples/%{name}
+install demos/* $RPM_BUILD_ROOT%{_prefix}/src/examples/%{name}
 
 (
   cd $RPM_BUILD_ROOT%{perl_sitearch}/auto/News/NNTPClient
@@ -57,4 +57,4 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitearch}/auto/News/NNTPClient
 
 %{_mandir}/man3/*
-/usr/src/examples/%{name}
+%{_prefix}/src/examples/%{name}
