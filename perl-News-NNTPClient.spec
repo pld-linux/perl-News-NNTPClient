@@ -7,6 +7,7 @@ Release:	5
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/News/NNTPClient-%{version}.tar.gz
+# Source0-md5:	1b0257d13f38d2b71bb85d5ac76f5fd1
 Patch0:		%{name}-paths.patch
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-devel >= 5.6
