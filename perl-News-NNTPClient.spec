@@ -2,13 +2,14 @@
 Summary:	News-NNTPClient perl module
 Summary(pl):	Modu³ perla News-NNTPClient
 Name:		perl-News-NNTPClient
-Version:	0.28
-Release:	3
-Copyright:	GPL
+Version:	0.36
+Release:	1
+License:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/News/NNTPClient-%{version}.tar.gz
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+Patch:		perl-News-NNTPClient-paths.patch
+BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	perl >= 5.005_03-14
 %requires_eq	perl
 Requires:	%{perl_sitearch}
@@ -23,6 +24,7 @@ News-NNTPClient - interfejs klienta NNTP.
 
 %prep
 %setup -q -n NNTPClient-%{version}
+%patch -p0
 
 %build
 perl Makefile.PL
@@ -30,7 +32,10 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/usr/src/examples/%{name}
+
 make install DESTDIR=$RPM_BUILD_ROOT
+install demos/* $RPM_BUILD_ROOT/usr/src/examples/%{name}
 
 (
   cd $RPM_BUILD_ROOT%{perl_sitearch}/auto/News/NNTPClient
@@ -49,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README.gz
 
 %{perl_sitelib}/News/NNTPClient.pm
-%{perl_sitelib}/News/NNTPFetchProgress.pm
 %{perl_sitearch}/auto/News/NNTPClient
 
 %{_mandir}/man3/*
+/usr/src/examples/%{name}
