@@ -36,14 +36,12 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 install demos/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-gzip -9nf README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README
 %{perl_sitelib}/News/NNTPClient.pm
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
