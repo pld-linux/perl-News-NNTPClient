@@ -27,7 +27,7 @@ News::NNTPClient - interfejs klienta NNTP.
 
 %build
 %{__perl} Makefile.PL \
-	INSTALLDIRS=vendor 
+	INSTALLDIRS=vendor
 %{__make}
 
 %install
