@@ -1,0 +1,8 @@
+--- demos/NNTPFetchProgress.pm.orig	Fri Feb 18 01:31:03 2000
++++ demos/NNTPFetchProgress.pm	Fri Feb 18 01:31:03 2000
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl -w
++#!/usr/bin/perl
+ 
+ # Experimental code, written by Rodger Anderson <rodger@boi.hp.com>
+ 
