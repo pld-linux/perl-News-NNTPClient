@@ -3,14 +3,14 @@ Summary:	News-NNTPClient perl module
 Summary(pl):	Modu³ perla News-NNTPClient
 Name:		perl-News-NNTPClient
 Version:	0.36
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/News/NNTPClient-%{version}.tar.gz
 Patch0:		perl-News-NNTPClient-paths.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-18
-BuildRequires:	perl >= 5.005_03-14
+BuildRequires:	perl >= 5.6
 %requires_eq	perl
 Requires:	%{perl_sitearch}
 Obsoletes:	perl-NNTPClient
@@ -37,14 +37,8 @@ install -d $RPM_BUILD_ROOT%{_prefix}/src/examples/%{name}
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 install demos/* $RPM_BUILD_ROOT%{_prefix}/src/examples/%{name}
 
-(
-  cd $RPM_BUILD_ROOT%{perl_sitearch}/auto/News/NNTPClient
-  sed -e "s#$RPM_BUILD_ROOT##" .packlist >.packlist.new
-  mv .packlist.new .packlist
-)
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man3/* \
-        README
+gzip -9nf README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
