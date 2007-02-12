@@ -4,7 +4,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	News::NNTPClient perl module
-Summary(pl):	Modu≥ perla News::NNTPClient
+Summary(pl.UTF-8):   Modu≈Ç perla News::NNTPClient
 Name:		perl-News-NNTPClient
 Version:	0.37
 Release:	7
@@ -23,7 +23,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 News::NNTPClient - a client interface to NNTP.
 
-%description -l pl
+%description -l pl.UTF-8
 News::NNTPClient - interfejs klienta NNTP.
 
 %prep
