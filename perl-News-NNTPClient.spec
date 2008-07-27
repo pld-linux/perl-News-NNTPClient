@@ -7,7 +7,7 @@ Summary:	News::NNTPClient perl module
 Summary(pl.UTF-8):	Moduł perla News::NNTPClient
 Name:		perl-News-NNTPClient
 Version:	0.37
-Release:	7
+Release:	8
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
