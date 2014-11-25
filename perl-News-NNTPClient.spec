@@ -1,7 +1,9 @@
 #
 # Conditional build:
 %bcond_with	tests	# perform "make test" (uses network!)
-#
+
+%define		pdir	News
+%define		pnam	NNTPClient
 %include	/usr/lib/rpm/macros.perl
 Summary:	News::NNTPClient perl module
 Summary(pl.UTF-8):	Moduł perla News::NNTPClient
@@ -14,8 +16,9 @@ Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/News/NNTPClient-%{version}.tar.gz
 # Source0-md5:	1b0257d13f38d2b71bb85d5ac76f5fd1
 Patch0:		%{name}-paths.patch
-BuildRequires:	rpm-perlprov >= 4.1-13
+URL:		http://search.cpan.org/dist/News-NNTPClient/
 BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
 Obsoletes:	perl-NNTPClient
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -43,7 +46,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-install demos/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -p demos/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
