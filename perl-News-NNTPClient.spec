@@ -4,7 +4,6 @@
 
 %define		pdir	News
 %define		pnam	NNTPClient
-%include	/usr/lib/rpm/macros.perl
 Summary:	News::NNTPClient perl module
 Summary(pl.UTF-8):	Moduł perla News::NNTPClient
 Name:		perl-News-NNTPClient
