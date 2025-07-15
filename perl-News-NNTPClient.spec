@@ -30,7 +30,7 @@ News::NNTPClient - interfejs klienta NNTP.
 
 %prep
 %setup -q -n NNTPClient-%{version}
-%patch0 -p0
+%patch -P0 -p0
 
 %build
 %{__perl} Makefile.PL \
